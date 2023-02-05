@@ -19,7 +19,7 @@
         <section class="section-hamburguer">
             <header>
                 <h2>Hamburguesas</h2>
-                <h2>Hamburguesas</h2>
+                <h2>Version 2</h2>
             </header>
             <?=selectHamburger()?>
         </section>
