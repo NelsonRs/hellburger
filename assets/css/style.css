@@ -1,1 +1,42 @@
-@import url(/assets/css/reset/style.css);/*# sourceMappingURL=style.css.map */
+@import url(/assets/css/reset/style.css);
+.section-index {
+  border: 1px solid white;
+  padding: 2rem 1rem;
+}
+.section-index header h1 {
+  font-size: 48px;
+}
+.section-index .section-hamburguer {
+  border: 1px solid white;
+  padding: 1rem;
+}
+.section-index .section-hamburguer header h2 {
+  font-size: 28px;
+}
+.section-index .section-hamburguer .card {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid white;
+}
+.section-index .section-hamburguer .card .title {
+  margin: 0 0 0 0.5rem;
+}
+.section-index .section-hamburguer .card .actions {
+  display: flex;
+}
+.section-index .section-hamburguer .card .actions button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary);
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0 0.25rem 0 0;
+  width: 50px;
+  height: 50px;
+  border: unset;
+  border-radius: 10px;
+}
+.section-index .section-hamburguer .card .actions button:active {
+  background: var(--primary);
+}/*# sourceMappingURL=style.css.map */
