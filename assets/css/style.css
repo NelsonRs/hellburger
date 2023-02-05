@@ -18,25 +18,39 @@
   padding: 1rem;
   border: 1px solid white;
 }
+.section-index .section-hamburguer .card .img {
+  position: relative;
+  width: 20%;
+}
+.section-index .section-hamburguer .card .img span {
+  position: absolute;
+  top: 0;
+}
 .section-index .section-hamburguer .card .title {
+  width: 40%;
   margin: 0 0 0 0.5rem;
 }
 .section-index .section-hamburguer .card .actions {
-  display: flex;
-}
-.section-index .section-hamburguer .card .actions button {
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.section-index .section-hamburguer .card .actions span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
   background: var(--secondary);
   font-size: 1.5rem;
+  font-weight: 600;
   padding: 1rem;
   margin: 0 0.25rem 0 0;
-  width: 50px;
-  height: 50px;
+  width: 15px;
+  height: 15px;
   border: unset;
   border-radius: 10px;
 }
-.section-index .section-hamburguer .card .actions button:active {
+.section-index .section-hamburguer .card .actions span:active {
   background: var(--primary);
 }/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 <?php 
-    $root = $_SERVER["DOCUMENT_ROOT"];
+    $root = $_SERVER["DOCUMENT_ROOT"]; require_once $root.'/php/models/class.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,28 +20,7 @@
             <header>
                 <h2>Hamburguesas</h2>
             </header>
-            <div class="card">
-                <img src="/assets/svg/burger.svg">
-                <div class="title">
-                    <h3>Burger Simple</h3>
-                    <p>Carne, Tocino, queso cheddar</p>
-                </div>
-                <div class="actions">
-                    <button>+</button>
-                    <button>-</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/assets/svg/burger.svg">
-                <div class="title">
-                    <h3>Burger Simple</h3>
-                    <p>Carne, Tocino, queso cheddar</p>
-                </div>
-                <div class="actions">
-                    <button>+</button>
-                    <button>-</button>
-                </div>
-            </div>
+            <?=selectHamburger()?>
         </section>
     </section>
 <script src="<?php $root?>assets/js/main.js"></script>
