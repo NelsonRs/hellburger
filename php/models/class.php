@@ -19,7 +19,7 @@
                         <div class="card">
                             <div class="img">
                                 <img src="/assets/svg/burger.svg">
-                                <span class="num">0</span>
+                                <span id="num'.$id.'">0</span>
                             </div>
                             
                             <div class="title">
@@ -27,8 +27,9 @@
                                 <p>'.$price.'</p>
                             </div>
                             <div class="actions">
-                                <span class="plus">+</span>
-                                <span class="minus">-</span>
+                                <span id="'.$id.'"  onclick="this.parentNode.querySelector('."'input[type=number]'".').stepUp(),total(this)">+</span>
+                                <input id="qty'.$id.'" type="number" min="0" value="0" hidden>
+                                <span id="'.$id.'" onclick="this.parentNode.querySelector('."'input[type=number]'".').stepDown(),total(this)">-</span>
                             </div>
                         </div>
                     ';
