@@ -1,4 +1,14 @@
 @import url(/assets/css/reset/style.css);
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
 .section-index {
   border: 1px solid white;
   padding: 2rem 1rem;
@@ -13,30 +23,38 @@
 .section-index .section-hamburguer header h2 {
   font-size: 28px;
 }
-.section-index .section-hamburguer .card {
+.section-index .section-hamburguer .products {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(80px, auto);
+}
+.section-index .section-hamburguer .products .card {
   display: flex;
   padding: 1rem;
   border: 1px solid white;
+  align-items: center;
+  justify-content: center;
 }
-.section-index .section-hamburguer .card .img {
+.section-index .section-hamburguer .products .card .img {
   position: relative;
   width: 20%;
 }
-.section-index .section-hamburguer .card .img span {
+.section-index .section-hamburguer .products .card .img span {
   position: absolute;
   top: 0;
 }
-.section-index .section-hamburguer .card .title {
+.section-index .section-hamburguer .products .card .title {
   width: 40%;
   margin: 0 0 0 0.5rem;
 }
-.section-index .section-hamburguer .card .actions {
+.section-index .section-hamburguer .products .card .actions {
   width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.section-index .section-hamburguer .card .actions span {
+.section-index .section-hamburguer .products .card .actions span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +69,6 @@
   border: unset;
   border-radius: 10px;
 }
-.section-index .section-hamburguer .card .actions span:active {
+.section-index .section-hamburguer .products .card .actions span:active {
   background: var(--primary);
 }/*# sourceMappingURL=style.css.map */

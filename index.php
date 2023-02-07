@@ -21,7 +21,7 @@
                 <h2>Hamburguesas</h2>
                 <h2>Version 2</h2>
             </header>
-            <?=selectHamburger()?>
+            <?=printProducts()?>
         </section>
     </section>
 <script src="<?php $root?>assets/js/main.js"></script>

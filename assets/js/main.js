@@ -20,3 +20,7 @@ toggle.onclick = function() {
 function total(e) {
     document.getElementById("num"+e.id).innerHTML= document.getElementById("qty"+e.id).value; 
 }
+
+function addProduct(id) {
+    alert(id);
+}
