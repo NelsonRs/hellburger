@@ -2,7 +2,7 @@
     $root = $_SERVER["DOCUMENT_ROOT"]; require_once $root.'/php/models/class.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,21 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body> 
-    <button id="theme-switch">Change</button>
+    
     <section class="section-index">
+    <button id="theme-switch">Change</button>
         <header>
             <h1>Productos</h1>
         </header>
         <section class="section-hamburguer">
             <header>
                 <h2>Hamburguesas</h2>
-                <h2>Version 2</h2>
             </header>
             <?=printProducts()?>
         </section>
+    </section>
+    <section class="cart">
+
     </section>
 <script src="<?php $root?>assets/js/main.js"></script>
 </body>

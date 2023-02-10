@@ -13,16 +13,18 @@
                 $price = $row["price"];
                 $print .= '
                         <div class="card" style="position:relative;">
-                            <div class="img">
-                                <img src="/assets/svg/burger.svg">
-                                <span id="num'.$id.'">0</span>
-                            </div>
+                            <div class="card-body">
+                                <div class="img">
+                                    <img src="/assets/img/products/'.$name.'.png">
+                                    <span id="num'.$id.'">0</span>
+                                </div>
                             
-                            <div class="title">
-                                <h3>'.$name.'</h3>
-                                <p>'.$price.'</p>
-                                <a id="'.$id.'" class="stretched-link" onclick="this.parentNode.querySelector('."'input[id=qty".$id."]'".').stepUp(),total(this),addProduct('.$id.')"></a>
-                                <input id="qty'.$id.'" type="number" min="0" value="0" hidden>
+                                <div class="title">
+                                    <h3>'.$name.'</h3>
+                                    <p>'.$price.' Bs</p>
+                                    <a id="'.$id.'" class="stretched-link" onclick="this.parentNode.querySelector('."'input[id=qty".$id."]'".').stepUp(),total(this),addProduct('.$id.')"></a>
+                                    <input id="qty'.$id.'" type="number" min="0" value="0" hidden>
+                                </div>
                             </div>
                         </div>
                     ';

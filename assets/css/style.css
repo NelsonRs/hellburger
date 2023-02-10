@@ -9,44 +9,120 @@
   content: "";
 }
 
-.section-index {
-  border: 1px solid white;
-  padding: 2rem 1rem;
-}
-.section-index header h1 {
-  font-size: 48px;
-}
-.section-index .section-hamburguer {
-  border: 1px solid white;
-  padding: 1rem;
-}
-.section-index .section-hamburguer header h2 {
-  font-size: 28px;
-}
-.section-index .section-hamburguer .products {
+.products {
+  padding: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(80px, auto);
 }
-.section-index .section-hamburguer .products .card {
+.products .card {
   display: flex;
-  padding: 1rem;
-  border: 1px solid white;
+  padding: 0.1rem;
+  height: 180px;
+  border-radius: 20px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
 }
-.section-index .section-hamburguer .products .card .img {
+.products .card .card-body {
+  display: block;
+}
+.products .card .card-body .img {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: center;
   position: relative;
-  width: 20%;
 }
-.section-index .section-hamburguer .products .card .img span {
+.products .card .card-body .img img {
+  width: 100px;
+  height: 80px;
+}
+.products .card .card-body .img span {
   position: absolute;
   top: 0;
+  right: 15%;
+  font-family: "SF Pro Display Black";
+  background-color: rgb(0, 94, 194);
+  color: white;
+  border-radius: 50px;
+  border: 2px solid white;
+  padding: 0.25rem;
 }
-.section-index .section-hamburguer .products .card .title {
-  width: 40%;
-  margin: 0 0 0 0.5rem;
+.products .card .card-body .title {
+  text-align: center;
+  font-size: 1rem;
+}
+.products .card .card-body .title h3 {
+  padding-bottom: 5px;
+  font-size: 1.15rem;
+}
+
+.cart {
+  display: none;
+}
+
+@media (min-width: 540px) {
+  .section-index {
+    display: inline-block;
+    width: 80%;
+  }
+  .cart {
+    display: inline-block;
+    width: 15%;
+    height: 150px;
+    background-color: black;
+  }
+  .products {
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(80px, auto);
+  }
+  .products .card {
+    display: flex;
+    height: 90px;
+    padding: 0.5rem;
+  }
+  .products .card .card-body {
+    display: flex;
+    align-items: center;
+  }
+  .products .card .card-body .img {
+    display: inline-block;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    position: relative;
+  }
+  .products .card .card-body .img img {
+    width: 100px;
+    height: 80px;
+  }
+  .products .card .card-body .title {
+    text-align: left;
+    margin: 0 0 0 0.5rem;
+  }
+}
+.section-index {
+  padding: 2rem 1rem;
+}
+.section-index header h1 {
+  font-family: "SF Pro Display Black";
+  font-size: 48px;
+}
+.section-index .section-hamburguer {
+  padding: 1rem;
+}
+.section-index .section-hamburguer header h2 {
+  font-family: "SF Pro Display Black";
+  font-size: 28px;
+}
+.section-index .section-hamburguer .products .card .title h3 {
+  font-family: "SF Pro Display Black";
+}
+.section-index .section-hamburguer .products .card .title p {
+  font-family: "SF Pro Display";
 }
 .section-index .section-hamburguer .products .card .actions {
   width: 40%;
@@ -71,4 +147,21 @@
 }
 .section-index .section-hamburguer .products .card .actions span:active {
   background: var(--primary);
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+  font-family: "SF Pro Display Black Italic";
+  src: url(../fonts/SFPRODISPLAYBLACKITALIC.OTF);
+}
+@font-face {
+  font-family: "SF Pro Display Bold";
+  src: url(../fonts/SFPRODISPLAYBOLD.OTF);
+}
+@font-face {
+  font-family: "SF Pro Display Medium";
+  src: url(../fonts/SFPRODISPLAYMEDIUM.OTF);
 }/*# sourceMappingURL=style.css.map */
