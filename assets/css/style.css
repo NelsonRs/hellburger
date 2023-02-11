@@ -1,22 +1,69 @@
 @import url(/assets/css/reset/style.css);
-.stretched-link::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  content: "";
+.section-index {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: 5rem 1fr;
+  gap: 1rem;
+  grid-template-areas: "header" "main";
 }
-
-.products {
+.section-index header {
+  display: flex;
+  justify-content: space-between;
+  grid-area: header;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+.section-index header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  font-size: 1.5rem;
+}
+.section-index header .social-media {
+  margin-left: 15px;
+}
+.section-index header .logo img {
+  width: 4rem;
+  height: 4rem;
+}
+.section-index header .btn-cart {
+  margin-right: 15px;
+  font-size: 1.8rem;
+}
+.section-index aside {
+  background-color: brown;
+  grid-area: aside;
+  display: none;
+}
+.section-index main {
+  grid-area: main;
+  padding: 2rem 1rem;
+}
+.section-index main h1, .section-index main h3 {
+  font-family: "SF Pro Display Black";
+  font-size: 48px;
+}
+.section-index main h1, .section-index main h2 {
+  padding-bottom: 1rem;
+}
+.section-index main h2 {
+  font-family: "SF Pro Display Bold";
+  font-size: 28px;
+  padding-left: 1rem;
+}
+.section-index main p {
+  font-family: "SF Pro Display";
+}
+.section-index main .products {
   padding: 0.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(80px, auto);
 }
-.products .card {
+.section-index main .products .card {
   display: flex;
   padding: 0.1rem;
   height: 180px;
@@ -25,20 +72,20 @@
   justify-content: center;
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
 }
-.products .card .card-body {
+.section-index main .products .card .card-body {
   display: block;
 }
-.products .card .card-body .img {
+.section-index main .products .card .card-body .img {
   display: flex;
   padding-bottom: 10px;
   justify-content: center;
   position: relative;
 }
-.products .card .card-body .img img {
+.section-index main .products .card .card-body .img img {
   width: 100px;
   height: 80px;
 }
-.products .card .card-body .img span {
+.section-index main .products .card .card-body .img span {
   position: absolute;
   top: 0;
   right: 15%;
@@ -49,106 +96,152 @@
   border: 2px solid white;
   padding: 0.25rem;
 }
-.products .card .card-body .title {
+.section-index main .products .card .card-body .title {
   text-align: center;
   font-size: 1rem;
 }
-.products .card .card-body .title h3 {
+.section-index main .products .card .card-body .title h3 {
   padding-bottom: 5px;
   font-size: 1.15rem;
 }
 
-.cart {
-  display: none;
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
 }
 
-@media (min-width: 540px) {
+@media (min-width: 600px) {
   .section-index {
-    display: inline-block;
-    width: 80%;
+    grid-template-columns: 1fr 25vw;
+    grid-template-rows: 5rem 1fr;
+    grid-template-areas: "header header" "main aside";
   }
-  .cart {
-    display: inline-block;
-    width: 15%;
-    height: 150px;
-    background-color: black;
-  }
-  .products {
-    padding: 0.5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(80px, auto);
-  }
-  .products .card {
+  .section-index aside {
     display: flex;
-    height: 90px;
-    padding: 0.5rem;
-  }
-  .products .card .card-body {
-    display: flex;
-    align-items: center;
-  }
-  .products .card .card-body .img {
-    display: inline-block;
-    padding-bottom: 0px;
-    padding-right: 10px;
-    position: relative;
-  }
-  .products .card .card-body .img img {
-    width: 100px;
-    height: 80px;
-  }
-  .products .card .card-body .title {
-    text-align: left;
-    margin: 0 0 0 0.5rem;
   }
 }
-.section-index {
-  padding: 2rem 1rem;
+/*
+
+
+
+.cart{
+    display: none;
 }
-.section-index header h1 {
-  font-family: "SF Pro Display Black";
-  font-size: 48px;
-}
-.section-index .section-hamburguer {
-  padding: 1rem;
-}
-.section-index .section-hamburguer header h2 {
-  font-family: "SF Pro Display Black";
-  font-size: 28px;
-}
-.section-index .section-hamburguer .products .card .title h3 {
-  font-family: "SF Pro Display Black";
-}
-.section-index .section-hamburguer .products .card .title p {
-  font-family: "SF Pro Display";
-}
-.section-index .section-hamburguer .products .card .actions {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section-index .section-hamburguer .products .card .actions span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 0;
-  background: var(--secondary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 1rem;
-  margin: 0 0.25rem 0 0;
-  width: 15px;
-  height: 15px;
-  border: unset;
-  border-radius: 10px;
-}
-.section-index .section-hamburguer .products .card .actions span:active {
-  background: var(--primary);
+@media (min-width: 540px) {
+    .section-index{
+        display: inline-block;
+        width: 80%;
+    }
+
+    .cart{
+        display: inline-block;
+        width: 15%;
+        height: 150px;
+        background-color: black;
+    }
+
+    .products{
+        padding: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(80px, auto);
+        .card{
+            display: flex;
+            height: 90px;
+            padding: 0.5rem;
+            .card-body{
+                display: flex;
+                align-items: center;
+
+
+                .img{
+                    display: inline-block;
+                    padding-bottom: 0px;
+                    padding-right: 10px;
+                    position: relative;
+                    img{
+                        width: 100px;
+                        height: 80px;
+                    }
+
+                }
+                .title{
+                    text-align: left;
+                    margin: 0 0 0 .5rem;
+                }
+            }
+        }
+    }
 }
 
+
+
+
+.section-index{
+    padding: 2rem 1rem;
+    header{
+        h1{
+            font-family: 'SF Pro Display Black';
+            font-size: 48px;
+        }
+    }
+
+    .section-hamburguer{
+        padding: 1rem;
+        header{
+            h2{
+                font-family: 'SF Pro Display Black';
+                font-size: 28px;
+            }
+        }
+        .products{
+
+        .card{
+            .title{
+                h3{
+                    font-family: 'SF Pro Display Black';
+                }
+                p{
+                    font-family: 'SF Pro Display';
+                }
+            }
+            .actions{
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 0;
+                    background: var(--secondary);
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    padding: 1rem;
+                    margin: 0 0.25rem 0 0;
+                    width: 15px;
+                    height: 15px;
+                    border: unset;
+                    border-radius: 10px;
+
+                    &:active{
+                        background: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+}
+
+*/
 @font-face {
   font-family: "SF Pro Display";
   src: url(../fonts/SFPRODISPLAYREGULAR.OTF);

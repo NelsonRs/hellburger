@@ -9,24 +9,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | HellBurger</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body> 
-    
     <section class="section-index">
-    <button id="theme-switch">Change</button>
         <header>
-            <h1>Productos</h1>
+            <div class="social-media">
+                <i id="theme-switch" class="bi-moon-fill"></i>
+            </div>
+            <div class="logo">
+                <img src="assets/img/products/Burger Doble.png" alt=""/>
+            </div>
+            <div class="btn-cart">
+            <i class="bi-cart4"></i>
+            </div>
         </header>
-        <section class="section-hamburguer">
-            <header>
-                <h2>Hamburguesas</h2>
-            </header>
+        
+        <main class="section-hamburguer">
+            <h1>Productos</h1>
+            <h2>Hamburguesas</h2>
+            <div class="products">
             <?=printProducts()?>
-        </section>
-    </section>
-    <section class="cart">
+            </div>
+        </main>
 
+        <aside id="cart">
+
+        </aside>
+        
     </section>
+
+    
 <script src="<?php $root?>assets/js/main.js"></script>
 </body>
 </html>

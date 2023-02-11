@@ -1,5 +1,118 @@
 @import url(/assets/css/reset/style.css);
 
+.section-index{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 5rem 1fr;
+    gap: 1rem;
+    grid-template-areas: 
+    "header"
+    "main";
+    header {
+        display: flex;
+        justify-content: space-between;        
+        grid-area: header;
+        border-bottom: 0.1rem solid rgba(0,0,0, 0.1);
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 75px;
+            font-size: 1.5rem;
+        }
+            
+            .social-media{
+                margin-left:15px;
+            }
+            .logo{
+                img{
+                    width:4rem;
+                    height: 4rem;
+                }
+            }
+            .btn-cart{
+                margin-right:15px;
+                font-size: 1.8rem;
+            }
+        }
+
+    aside{
+        background-color: brown;
+        grid-area: aside;
+        display: none;
+    }
+    main{
+        grid-area: main;
+        padding: 2rem 1rem;
+        h1,h3{
+            font-family: 'SF Pro Display Black';
+            font-size: 48px;
+        }
+        h1,h2{
+            padding-bottom: 1rem;
+        }
+        h2{
+            font-family: 'SF Pro Display Bold';
+            font-size: 28px;
+            padding-left: 1rem;
+        }
+        p{
+            font-family: 'SF Pro Display';
+        }
+        .products{
+            padding: 0.5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(80px, auto);
+            .card{
+                display: flex;
+                padding: 0.1rem;
+                height: 180px;
+                border-radius: 20px;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+                .card-body{
+                    display: block;
+                    .img{
+                        display: flex;
+                        padding-bottom: 10px;
+                        justify-content: center;
+                        position: relative;
+                        img{
+                            width: 100px;
+                            height: 80px;
+                        }
+                        span{
+                            position: absolute;
+                            top: 0;
+                            right:15%;
+                            font-family: 'SF Pro Display Black';
+                            background-color: rgb(0, 94, 194);
+                            color: white;
+                            border-radius: 50px;
+                            border: 2px solid white;
+                            padding: 0.25rem;
+                        }
+                    }
+                    .title{
+                        text-align: center;
+                        font-size: 1rem;
+                        h3{
+                            padding-bottom: 5px;
+                            font-size: 1.15rem;
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}
 
 .stretched-link::after{
     position:absolute;
@@ -8,58 +121,26 @@
     bottom:0;
     left:0;
     z-index:1;
-    content:""
+    content:"";
 }
 
-.products{
-    padding: 0.5rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(80px, auto);
-    .card{
-        display: flex;
-        padding: 0.1rem;
-        height: 180px;
-        border-radius: 20px;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
-        .card-body{
-            display: block;
-            .img{
-                display: flex;
-                padding-bottom: 10px;
-                justify-content: center;
-                position: relative;
-                img{
-                    width: 100px;
-                    height: 80px;
-                }
-                span{
-                    position: absolute;
-                    top: 0;
-                    right:15%;
-                    font-family: 'SF Pro Display Black';
-                    background-color: rgb(0, 94, 194);
-                    color: white;
-                    border-radius: 50px;
-                    border: 2px solid white;
-                    padding: 0.25rem;
-                }
-            }
-            .title{
-                text-align: center;
-                font-size: 1rem;
-                h3{
-                    padding-bottom: 5px;
-                    font-size: 1.15rem;
-                }
-            }
+@media (min-width:600px) {
+    .section-index{
+        grid-template-columns:1fr 25vw;
+        grid-template-rows: 5rem 1fr;
+        grid-template-areas: 
+        "header header"
+        "main aside";
+        aside{
+            display: flex;
         }
-        
     }
 }
+
+/*
+
+
+
 .cart{
     display: none;
 }
@@ -172,7 +253,7 @@
 }
 }
 
-
+*/
 
 
 @font-face {

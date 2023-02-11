@@ -5,7 +5,7 @@
         $result = $mysqli->query("SELECT P.id,P.name,P.price FROM producto P");
         $print = "";
         if ($result->num_rows > 0) {
-            $print = '<div class="products">';
+            $print = '';
             $id=1;
             while ($row = $result->fetch_assoc()) {
                 $id = $row["id"];
@@ -29,7 +29,6 @@
                         </div>
                     ';
             }
-            $print .= '</div>';
         } else {
             $print = "<p>No hay hamburguesas</p>";
             return $print;

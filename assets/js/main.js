@@ -22,5 +22,5 @@ function total(e) {
 }
 
 function addProduct(id) {
-    alert(id);
+    alert("se añadió el producto nro. "+id+" al carrito");
 }
