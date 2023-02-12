@@ -20,8 +20,12 @@
             <div class="logo">
                 <img src="assets/img/products/Burger Doble.png" alt=""/>
             </div>
-            <div class="btn-cart">
-            <i class="bi-cart4"></i>
+            <div id="mostrar-modal" class="btn-cart hamburger" onclick="modalCart()" >
+                <div class="bi-cart4">
+                    <span class="badge">
+                        <span id="Qtycart">0</span>
+                    </span>
+                </div>
             </div>
         </header>
         
@@ -32,14 +36,48 @@
             <?=printProducts()?>
             </div>
         </main>
+        
+<div class="modal" id="ModalCart" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true" data-backdrop="">
+    <div class="modal-header">
+      <span class="close"><i class="bi-x-lg"></i></span>
+    </div>
+
+    <div class="modal-content">
+      <div class="modal-products">
+        <h3>No tiene productos en el carrito!</h3>
+      </div>
+      <?= printCart()?>
+
+    </div>
+    
+    
+</div>
 
         <aside id="cart">
-
+        
         </aside>
         
     </section>
 
     
 <script src="<?php $root?>assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  
+});
+
+var modal = document.querySelector("#ModalCart");
+var span = document.querySelector(".close");
+
+span.onclick = function() {
+  modal.style.right="-100vh";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.right="-100vh"
+  }
+}
+</script>
 </body>
 </html>

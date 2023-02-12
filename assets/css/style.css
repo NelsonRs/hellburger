@@ -1,4 +1,169 @@
 @import url(/assets/css/reset/style.css);
+/*
+@mixin hamburger-inner {
+  .hamburger-inner {
+    border-radius: 0;
+    &::before,
+    &::after {
+      border-radius: 0;
+    }
+  }
+}
+
+.hamburger {
+  @include hamburger-inner;
+  &.is-active {
+    @include hamburger-inner;
+    &:hover { opacity: 1; }
+  }
+    &:hover { opacity: 1; }
+}*/
+.modal {
+  background: white;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: -100vh;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  transition: all 0.5s;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+}
+.modal .modal-header {
+  display: flex;
+  justify-content: end;
+}
+.modal .modal-header .close {
+  padding: 1rem;
+  font-size: 2rem;
+}
+.modal .modal-content {
+  padding: 0px 1.5rem;
+  padding-bottom: 10px;
+}
+.modal .modal-content .modal-products {
+  justify-content: center;
+  padding: 1rem;
+}
+.modal .modal-content .modal-products h3 {
+  font-family: "SF Pro Display Black";
+  font-size: 22px;
+}
+.modal .modal-content #Order {
+  display: none;
+  justify-content: center;
+  padding: 1rem;
+  font-family: "SF Pro Display Black";
+  font-size: 25px;
+}
+.modal .modal-content .item {
+  display: inline-flex;
+  position: relative;
+  margin-bottom: 5px;
+  height: 100px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.modal .modal-content .item .img {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+.modal .modal-content .item .img img {
+  padding-top: 10px;
+  width: 80px;
+  height: 80px;
+}
+.modal .modal-content .item .details {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2.5rem;
+  width: 65%;
+}
+.modal .modal-content .item .details .title {
+  margin-right: 10px;
+}
+.modal .modal-content .item .details .title h3 {
+  font-family: "SF Pro Display Black";
+}
+.modal .modal-content .item .details .title p {
+  font-family: "SF Pro Display Regular";
+  padding-top: 2px;
+}
+.modal .modal-content .item .details .Quantity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: stretch;
+}
+.modal .modal-content .item .details .Quantity input {
+  border: none;
+  width: 20px;
+  height: 40px;
+  font-size: 25px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+.modal .modal-content .item .details .Quantity input[type=number]::-webkit-inner-spin-button,
+.modal .modal-content .item .details .Quantity input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal .modal-content .item .details .Quantity input[type=number] {
+  -moz-appearance: textfield;
+}
+.modal .modal-content .item .details .Quantity span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  font-size: 30px;
+  padding: 0 5px;
+  margin: 0 10px;
+}
+.modal .modal-content .item .details .Quantity span:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.modal .modal-content .item .details .Quantity span:link {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content .modal-footer {
+  display: none;
+  position: relative;
+  margin-bottom: 5px;
+  height: 50px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.modal .modal-content .modal-footer .details {
+  display: inline-flex;
+  width: 100%;
+}
+.modal .modal-content .modal-footer .details h3 {
+  padding-left: 35px;
+  font-family: "SF Pro Display Black";
+  width: 50%;
+  font-size: 22px;
+}
+.modal .modal-content .modal-footer .details p {
+  display: flex;
+  justify-content: end;
+  margin-right: 35px;
+  font-family: "SF Pro Display Medium";
+  width: 50%;
+  font-size: 22px;
+}
+
 .section-index {
   display: grid;
   height: 100%;
@@ -32,6 +197,25 @@
   margin-right: 15px;
   font-size: 1.8rem;
 }
+.section-index header .btn-cart .badge {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-index header .btn-cart .badge span {
+  font-family: "SF Pro Display Bold";
+  font-size: 15px;
+  color: white;
+}
 .section-index aside {
   background-color: brown;
   grid-area: aside;
@@ -39,41 +223,45 @@
 }
 .section-index main {
   grid-area: main;
-  padding: 2rem 1rem;
+  padding: 0.5rem;
 }
 .section-index main h1, .section-index main h3 {
   font-family: "SF Pro Display Black";
-  font-size: 48px;
+  font-size: 40px;
+  padding-left: 1rem;
 }
 .section-index main h1, .section-index main h2 {
   padding-bottom: 1rem;
 }
 .section-index main h2 {
   font-family: "SF Pro Display Bold";
-  font-size: 28px;
-  padding-left: 1rem;
+  font-size: 25px;
+  padding-left: 2.5rem;
 }
 .section-index main p {
   font-family: "SF Pro Display";
 }
 .section-index main .products {
-  padding: 0.5rem;
+  padding: 3rem 0.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 4rem 0.5rem;
   grid-auto-rows: minmax(80px, auto);
 }
 .section-index main .products .card {
   display: flex;
-  padding: 0.1rem;
-  height: 180px;
+  position: relative;
+  height: 140px;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  /*box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);*/
 }
 .section-index main .products .card .card-body {
   display: block;
+  position: absolute;
+  top: -50px;
 }
 .section-index main .products .card .card-body .img {
   display: flex;
@@ -82,27 +270,45 @@
   position: relative;
 }
 .section-index main .products .card .card-body .img img {
-  width: 100px;
-  height: 80px;
+  width: 8rem;
+  height: 7rem;
 }
-.section-index main .products .card .card-body .img span {
+.section-index main .products .card .card-body .img .badge {
   position: absolute;
   top: 0;
-  right: 15%;
-  font-family: "SF Pro Display Black";
+  right: 5%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
   background-color: rgb(0, 94, 194);
-  color: white;
   border-radius: 50px;
   border: 2px solid white;
-  padding: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-index main .products .card .card-body .img .badge span {
+  font-family: "SF Pro Display Black";
+  color: white;
 }
 .section-index main .products .card .card-body .title {
+  padding-top: 5px;
   text-align: center;
   font-size: 1rem;
 }
 .section-index main .products .card .card-body .title h3 {
   padding-bottom: 5px;
   font-size: 1.15rem;
+  padding-left: 0rem;
+}
+.section-index main .products .card .card-body .title p {
+  padding-top: 2px;
+}
+.section-index main .products .card:hover {
+  scale: 1.04;
+}
+.section-index main .products .card:active {
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .stretched-link::after {
