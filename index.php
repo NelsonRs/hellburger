@@ -33,7 +33,13 @@
             <h1>Productos</h1>
             <h2>Hamburguesas</h2>
             <div class="products">
-            <?=printProducts()?>
+            <?=printFoods()?>
+            <?php 
+    ?>
+            </div>
+            <h2>Bebidas</h2>
+            <div class="products">
+              <?=printDrinks()?>
             </div>
         </main>
         
@@ -47,7 +53,7 @@
         <h3>No tiene productos en el carrito!</h3>
       </div>
       <?= printCart()?>
-
+    
     </div>
     
     
@@ -63,7 +69,7 @@
 <script src="<?php $root?>assets/js/main.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
-  
+
 });
 
 var modal = document.querySelector("#ModalCart");

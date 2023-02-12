@@ -20,18 +20,29 @@ toggle.onclick = function() {
 
 function total(id) {
     document.getElementById("num"+id).innerHTML= document.getElementById("qty"+id).value; 
-    const qty = [];
-    qty[0]=parseInt(document.getElementById("num1").innerHTML);
-    qty[1]=parseInt(document.getElementById("num2").innerHTML);
-    qty[2]=parseInt(document.getElementById("num3").innerHTML);
-    document.getElementById("Qtycart").innerHTML = qty[0]+qty[1]+qty[2]; 
-
-    const price =[];
-    price[0]=parseFloat(document.getElementById("num1").innerHTML)*parseFloat(document.getElementById("price1").innerHTML);
-    price[1]=parseFloat(document.getElementById("num2").innerHTML)*parseFloat(document.getElementById("price2").innerHTML);
-    price[2]=parseFloat(document.getElementById("num3").innerHTML)*parseFloat(document.getElementById("price3").innerHTML);
-    document.getElementById("total").innerHTML = price[0]+price[1]+price[2]; 
-
+    var cards = document.getElementsByClassName("card").length;
+    
+    const price = [cards-1];
+    qtyTotal = 0;
+    priceTotal = 0;
+    for (let i = 0; i < cards; i++) {
+        qtyTotal = qtyTotal+ parseInt(document.getElementById("num"+(i+1)).innerHTML);
+        price[i]=parseFloat(document.getElementById("num"+(i+1)).innerHTML)*parseFloat(document.getElementById("price"+(i+1)).innerHTML);
+    }
+    for (let i = 0; i < cards; i++) {
+        priceTotal= priceTotal+price[i];
+    }
+    document.getElementById("Qtycart").innerHTML = qtyTotal; 
+    document.getElementById("total").innerHTML = priceTotal+" BS"; 
+    
+    if ((document.getElementById("qty"+id).value)==0) {
+        document.querySelector(".Product"+id).style.display = "none";
+        if ((document.getElementById("Qtycart").innerHTML)==0) {
+            document.querySelector(".modal-products").style.display = "flex";
+            document.querySelector("#Order").style.display = "none";
+            document.querySelector(".modal-footer").style.display = "none";
+        }
+    }
 }
 
 function addProduct(id) {
