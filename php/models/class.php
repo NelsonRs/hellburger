@@ -95,7 +95,7 @@
                         </div>
                         <div class="Quantity">
                             <span id="'.$id.'"  onclick="this.parentNode.querySelector('."'input[id=qty".$id."]'".').stepDown(),total(this.id)"><i class="bi-dash-lg"></i></span>
-                                <input id="qty'.$id.'" type="number" min="0" value="1">
+                                <input id="qty'.$id.'" type="number" min="0" value="1" onchange="total('.$id.')">
                             <span id="'.$id.'"  onclick="this.parentNode.querySelector('."'input[id=qty".$id."]'".').stepUp(),total(this.id)"><i class="bi-plus-lg"></i></span>
                         </div>
                     </div>

@@ -18,6 +18,40 @@
   }
     &:hover { opacity: 1; }
 }*/
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(249, 249, 249);
+  opacity: 1;
+}
+.loader .content {
+  display: block;
+}
+.loader .content .image {
+  display: block;
+}
+.loader .content .image img {
+  width: 150px;
+  height: 150px;
+}
+.loader .content .text {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+.loader .content .text span {
+  font-family: "SF Pro Display Black";
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .modal {
   background: white;
   color: #fff;
@@ -104,7 +138,7 @@
 }
 .modal .modal-content .item .details .Quantity input {
   border: none;
-  width: 20px;
+  width: 30px;
   height: 40px;
   font-size: 25px;
   text-align: center;
@@ -119,6 +153,7 @@
   -moz-appearance: textfield;
 }
 .modal .modal-content .item .details .Quantity span {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +163,7 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   font-size: 30px;
   padding: 0 5px;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 .modal .modal-content .item .details .Quantity span:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -189,6 +224,7 @@
 }
 .section-index header .social-media {
   margin-left: 15px;
+  cursor: pointer;
 }
 .section-index header .logo img {
   width: 4rem;
@@ -197,6 +233,7 @@
 .section-index header .btn-cart {
   margin-right: 15px;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 .section-index header .btn-cart .badge {
   position: absolute;
@@ -250,6 +287,7 @@
   grid-auto-rows: minmax(80px, auto);
 }
 .section-index main .products .card {
+  cursor: pointer;
   display: flex;
   position: relative;
   height: 140px;

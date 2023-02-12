@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body> 
+  <div class="loader">
+    <div class="content">
+      <div class="image"><img src="assets/img/loader.gif" alt=""></div>
+      <div class="text"><span>Loading...</span></div>
+    </div>
+  </div>
     <section class="section-index">
         <header>
             <div class="social-media">
@@ -67,6 +73,7 @@
 
     
 <script src="<?php $root?>assets/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -84,6 +91,14 @@ window.onclick = function(event) {
     modal.style.right="-100vh"
   }
 }
+
+</script>
+<script type="text/javascript">
+$(window).load(function() {
+  setTimeout(function(){
+    $(".loader").fadeOut("slow");
+  }, 2000);
+});
 </script>
 </body>
 </html>
