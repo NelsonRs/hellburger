@@ -28,7 +28,7 @@
                             </div>
                             <div class="actions">
                                 <span class="dec btn-action">-</span>
-                                <input type="text" name="qty" id="b-'.$id.'" value="1" hidden>
+                                <input type="text" name="qty" id="b-'.$id.'" value="0" hidden>
                                 <span class="inc btn-action">+</span>
                             </div>
                         </div>

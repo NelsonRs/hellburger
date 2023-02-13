@@ -28,11 +28,7 @@ for (let i = 0; i < incBtn.length; i++) {
         var inputValue = input.value
         var newValue = parseInt(inputValue) + 1
         input.value = newValue
-        var n_count = document.getElementsByClassName((input.id).toString())
-        input.addEventListener('change',(e)=>{
-            n_count.innerHTML = input.value
-        })
-        console.log(input)
+        document.getElementsByClassName((input.id).toString())[0].innerHTML = input.value
     })
 }
 for (let i = 0; i < decBtn.length; i++) {
@@ -44,6 +40,7 @@ for (let i = 0; i < decBtn.length; i++) {
         var newValue = parseInt(inputValue) - 1
         if (newValue >= 0) {
             input.value = newValue
+            document.getElementsByClassName((input.id).toString())[0].innerHTML = input.value
         }
         else{
             input.value = 0
