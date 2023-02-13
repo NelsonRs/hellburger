@@ -72,33 +72,8 @@
     </section>
 
     
-<script src="<?php $root?>assets/js/main.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function(event) {
-
-});
-
-var modal = document.querySelector("#ModalCart");
-var span = document.querySelector(".close");
-
-span.onclick = function() {
-  modal.style.right="-100vh";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.right="-100vh"
-  }
-}
-
-</script>
-<script type="text/javascript">
-$(window).load(function() {
-  setTimeout(function(){
-    $(".loader").fadeOut("slow");
-  }, 2000);
-});
-</script>
+<script src="<?php $root?>assets/js/main.js"></script>
 </body>
 </html>

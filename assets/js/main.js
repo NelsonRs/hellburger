@@ -1,9 +1,10 @@
-var toggle = document.getElementById("theme-switch");
+load()
 
+// SWITCH THEME
+var toggle = document.getElementById("theme-switch");
 var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: light)").matches ? "dark" : "light");
 if (storedTheme)
     document.documentElement.setAttribute('data-theme', storedTheme)
-
 
 toggle.onclick = function() {
     var currentTheme = document.documentElement.getAttribute("data-theme");
@@ -16,6 +17,8 @@ toggle.onclick = function() {
     document.documentElement.setAttribute('data-theme', targetTheme)
     localStorage.setItem('theme', targetTheme);
 };
+
+
 
 
 function total(id) {
@@ -57,4 +60,26 @@ function addProduct(id) {
 
 function modalCart() {
     document.querySelector("#ModalCart").style.right = "0";
+}
+
+
+function load() {
+    $(window).load(function() {
+        setTimeout(function(){
+          $(".loader").fadeOut("slow");
+        }, 2000);
+      });
+}
+
+var modal = document.querySelector("#ModalCart");
+var span = document.querySelector(".close");
+
+span.onclick = function() {
+  modal.style.right="-100vh";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.right="-100vh"
+  }
 }
