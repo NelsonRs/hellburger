@@ -6,37 +6,37 @@
 .section-index header h1 {
   font-size: 48px;
 }
-.section-index .section-hamburguer {
+.section-index .section-food, .section-index .section-drink {
   border: 1px solid white;
   padding: 1rem;
 }
-.section-index .section-hamburguer header h2 {
+.section-index .section-food header h2, .section-index .section-drink header h2 {
   font-size: 28px;
 }
-.section-index .section-hamburguer .card {
+.section-index .section-food .card, .section-index .section-drink .card {
   display: flex;
   padding: 1rem;
   border: 1px solid white;
 }
-.section-index .section-hamburguer .card .img {
+.section-index .section-food .card .img, .section-index .section-drink .card .img {
   position: relative;
   width: 20%;
 }
-.section-index .section-hamburguer .card .img span {
+.section-index .section-food .card .img span, .section-index .section-drink .card .img span {
   position: absolute;
   top: 0;
 }
-.section-index .section-hamburguer .card .title {
+.section-index .section-food .card .title, .section-index .section-drink .card .title {
   width: 40%;
   margin: 0 0 0 0.5rem;
 }
-.section-index .section-hamburguer .card .actions {
+.section-index .section-food .card .actions, .section-index .section-drink .card .actions {
   width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.section-index .section-hamburguer .card .actions span {
+.section-index .section-food .card .actions span, .section-index .section-drink .card .actions span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +51,9 @@
   border: unset;
   border-radius: 10px;
 }
-.section-index .section-hamburguer .card .actions span:active {
+.section-index .section-food .card .actions span:active, .section-index .section-drink .card .actions span:active {
   background: var(--primary);
+}
+.section-index .section-food .card .actions input, .section-index .section-drink .card .actions input {
+  width: 10px;
 }/*# sourceMappingURL=style.css.map */

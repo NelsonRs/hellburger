@@ -1,8 +1,8 @@
 <?php $root = $_SERVER['DOCUMENT_ROOT']; include $root."/php/models/db.php";
 
-    function selectHamburger(){
+    function selectProduct($product){
         global $mysqli;
-        $result = $mysqli->query("SELECT P.id,P.name,P.price FROM producto P");
+        $result = $mysqli->query("SELECT P.id,P.name,P.price FROM producto P WHERE P.category='$product'");
         $result = printHamburger($result);
         return $result;
     }
@@ -19,7 +19,7 @@
                         <div class="card">
                             <div class="img">
                                 <img src="/assets/svg/burger.svg">
-                                <span class="num">0</span>
+                                <span class="b-'.$id.'">0</span>
                             </div>
                             
                             <div class="title">
@@ -27,8 +27,9 @@
                                 <p>'.$price.'</p>
                             </div>
                             <div class="actions">
-                                <span class="plus">+</span>
-                                <span class="minus">-</span>
+                                <span class="dec btn-action">-</span>
+                                <input type="text" name="qty" id="b-'.$id.'" value="1" hidden>
+                                <span class="inc btn-action">+</span>
                             </div>
                         </div>
                     ';

@@ -17,20 +17,36 @@ toggle.onclick = function() {
     localStorage.setItem('theme', targetTheme);
 };
 
-const plus = document.querySelector(".plus"),
-minus = document.querySelector(".minus"),
-num = document.querySelector(".num");
+var incBtn = document.getElementsByClassName('inc');
+var decBtn = document.getElementsByClassName('dec');
 
-let a = 0;
-
-plus.addEventListener("click", ()=>{
-    a++;
-    num.innerText = a;
-})
-
-minus.addEventListener("click", ()=>{
-   if(a > 1){
-    a--;
-    num.innerText = a;
-    }
-})
+for (let i = 0; i < incBtn.length; i++) {
+    var button = incBtn[i];
+    button.addEventListener('click',(e)=>{
+        var btnClicked = e.target;
+        var input = btnClicked.parentElement.children[1]
+        var inputValue = input.value
+        var newValue = parseInt(inputValue) + 1
+        input.value = newValue
+        var n_count = document.getElementsByClassName((input.id).toString())
+        input.addEventListener('change',(e)=>{
+            n_count.innerHTML = input.value
+        })
+        console.log(input)
+    })
+}
+for (let i = 0; i < decBtn.length; i++) {
+    var button = decBtn[i];
+    button.addEventListener('click',(e)=>{
+        var btnClicked = e.target;
+        var input = btnClicked.parentElement.children[1]
+        var inputValue = input.value
+        var newValue = parseInt(inputValue) - 1
+        if (newValue >= 0) {
+            input.value = newValue
+        }
+        else{
+            input.value = 0
+        }
+    })
+}

@@ -2,7 +2,7 @@
     $root = $_SERVER["DOCUMENT_ROOT"]; require_once $root.'/php/models/class.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +16,19 @@
         <header>
             <h1>Productos</h1>
         </header>
-        <section class="section-hamburguer">
+        <section class="section-food">
             <header>
-                <h2>Hamburguesas</h2>
-                <h2>Hamburguesas</h2>
+                <h2>Burger</h2>
             </header>
-            <?=selectHamburger()?>
+            <?=selectProduct('Food')?>
+        </section>
+        <section class="section-drink">
+            <header>
+                <h2>Drinks</h2>
+            </header>
+            <?=selectProduct('Drink')?>
         </section>
     </section>
-<script src="<?php $root?>assets/js/main.js"></script>
+    <script src="<?php $root?>assets/js/main.js"></script>
 </body>
 </html>
