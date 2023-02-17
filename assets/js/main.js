@@ -1,7 +1,7 @@
 load()
 
 // SWITCH THEME
-var toggle = document.getElementById("theme-switch");
+var toggle = document.getElementById("theme-switch")
 var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: light)").matches ? "dark" : "light");
 if (storedTheme)
     document.documentElement.setAttribute('data-theme', storedTheme)
@@ -18,12 +18,58 @@ toggle.onclick = function() {
     localStorage.setItem('theme', targetTheme);
 };
 
+var Message = document.querySelector("#ModalMessage");
 
+function newOrder() {
+    var total = document.querySelector("#total").innerHTML;
 
+    let ruta = "consulta=nroOrder&total="+parseInt(total);
+            $.ajax({
+                url:  'php/models/negocio.php',
+                type: 'POST',
+                data: ruta,
+                
+            success: function(r) {
+                insertOrder(r);
+            },
+    }); 
+}
+
+function insertOrder(order) {
+    nroorder = order;
+    var cards = document.getElementsByClassName("item").length;
+    for (let i = 1; i <= cards; i++) {
+        if (document.querySelector(".Product"+(i)).style.display=='flex') {
+            qty= document.querySelector("#num"+(i)).innerHTML;
+            let ruta = "order="+nroorder+"&product="+(i)+"&qty="+qty;
+            $.ajax({
+                url:  'php/models/negocio.php',
+                type: 'POST',
+                data: ruta,
+                
+                success: function() {
+                },
+            }); 
+        } 
+    }
+    Message.style.display="flex";
+    clearOrder();
+    closeCart();
+    setTimeout(function(){
+        $("#ModalMessage").fadeOut("slow");
+        printer(nroorder);
+    }, 1100);
+
+}
+
+function printer(nro) {
+    window.open("/php/models/Order.php?nro="+nro);
+    window.open("/php/models/Factura.php?nro="+nro);
+}
 
 function total(id) {
     document.getElementById("num"+id).innerHTML= document.getElementById("qty"+id).value; 
-    var cards = document.getElementsByClassName("card").length;
+    var cards = document.getElementsByClassName("item").length;
     
     const price = [cards-1];
     qtyTotal = 0;
@@ -40,17 +86,35 @@ function total(id) {
     
     if ((document.getElementById("qty"+id).value)==0) {
         document.querySelector(".Product"+id).style.display = "none";
-        if ((document.getElementById("Qtycart").innerHTML)==0) {
-            document.querySelector(".modal-products").style.display = "flex";
-            document.querySelector("#Order").style.display = "none";
-            document.querySelector(".modal-footer").style.display = "none";
-        }
+        if (document.getElementById("Qtycart").innerHTML == 0) {
+            clearCart();
+        } 
     }
 }
 
+function clearOrder() {
+    var cards = document.getElementsByClassName("item").length;
+    for (let i = 0; i < cards; i++) {
+        var item = document.querySelector(".Product"+(i+1));
+        document.getElementById("qty"+(i+1)).innerHTML=0;
+        document.getElementById("num"+(i+1)).innerHTML=0;
+        item.style.display = "none";
+    }
+    clearCart();
+}
+
+function clearCart() {
+    document.getElementById("Qtycart").innerHTML = 0;
+    document.querySelector(".modal-products").style.display = "flex";
+    document.querySelector("#Order").style.display = "none";
+    document.querySelector(".Add-order").style.display = "none";
+    document.querySelector(".modal-footer").style.display = "none";
+}
+
 function addProduct(id) {
-    document.querySelector(".modal-products").style.display = "none";
     document.querySelector("#Order").style.display = "flex";
+    document.querySelector(".modal-products").style.display = "none";
+    document.querySelector(".Add-order").style.display = "flex";
     document.querySelector(".Product"+id).style.display = "flex";
     document.querySelector(".modal-footer").style.display = "flex";
 
@@ -58,28 +122,24 @@ function addProduct(id) {
     total(id)
 }
 
-function modalCart() {
-    document.querySelector("#ModalCart").style.right = "0";
-}
-
-
 function load() {
     $(window).load(function() {
-        setTimeout(function(){
           $(".loader").fadeOut("slow");
-        }, 2000);
-      });
+    });
 }
 
-var modal = document.querySelector("#ModalCart");
 var span = document.querySelector(".close");
 
 span.onclick = function() {
-  modal.style.right="-100vh";
+    closeCart();
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.right="-100vh"
-  }
+
+function closeCart() {
+    var modal = document.getElementById("ModalCart");
+    modal.style.right="-100vh";
+}
+
+function modalCart() {
+    document.querySelector("#ModalCart").style.right = "0";
 }
