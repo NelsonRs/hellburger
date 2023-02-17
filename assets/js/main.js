@@ -137,7 +137,7 @@ span.onclick = function() {
 
 function closeCart() {
     var modal = document.getElementById("ModalCart");
-    modal.style.right="-100vh";
+    modal.style.right="-100vw";
 }
 
 function modalCart() {
