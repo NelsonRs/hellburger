@@ -5,22 +5,44 @@
     display: flex;
     justify-content: space-between;
   }
+  .section-products {
+    padding: 1rem;
+  }
   .section-products header h2 {
     font-size: 1.5rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     font-weight: 600;
   }
   .section-products .group-card {
-    display: flex;
+    padding: 1rem 0;
   }
   .section-products .group-card .grid-card {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+    gap: 15px;
   }
   .section-products .group-card .grid-card .card {
     display: flex;
     flex-direction: column;
   }
+  .section-products .group-card .grid-card .card .col-img {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+  }
   .section-products .group-card .grid-card .card .col-img img {
-    width: 100%;
+    max-width: 85%;
+    max-height: 90%;
+  }
+  .section-products .group-card .grid-card .card .col-title {
+    height: 30%;
+  }
+  .section-products .group-card .grid-card .card .col-title p:nth-of-type(1) {
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+  }
+  .section-products .group-card .grid-card .card .col-title p:nth-of-type(2) {
+    margin: 0.5rem 0 0;
   }
 }/*# sourceMappingURL=style.css.map */

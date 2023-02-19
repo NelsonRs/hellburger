@@ -14,28 +14,6 @@ INSERT INTO `cliente` (`id`, `name`, `ci`) VALUES
 	(1, 'Nelson Ribera', 13429820),
 	(2, 'Jurgen Nogales', 8188326);
 
-CREATE TABLE IF NOT EXISTS `detalle_pedido` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `pedido_id` int DEFAULT NULL,
-  `producto_id` int DEFAULT NULL,
-  `quantity` int DEFAULT NULL,
-  `subtotal` double(10,2) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `pedido_id` (`pedido_id`),
-  KEY `producto_id` (`producto_id`),
-  CONSTRAINT `detalle_pedido_ibfk_1` FOREIGN KEY (`pedido_id`) REFERENCES `pedido` (`id`),
-  CONSTRAINT `detalle_pedido_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-DELETE FROM `detalle_pedido`;
-INSERT INTO `detalle_pedido` (`id`, `pedido_id`, `producto_id`, `quantity`, `subtotal`) VALUES
-	(25, 1, 1, 1, 27.00),
-	(26, 2, 1, 1, 27.00),
-	(27, 3, 1, 1, 27.00),
-	(28, 4, 1, 1, 27.00),
-	(29, 5, 1, 1, 27.00),
-	(30, 6, 1, 1, 27.00);
-
 CREATE TABLE IF NOT EXISTS `pedido` (
   `id` int NOT NULL AUTO_INCREMENT,
   `cliente_id` int DEFAULT NULL,
@@ -77,3 +55,25 @@ INSERT INTO `producto` (`id`, `name`, `price`, `stock`, `category`) VALUES
 	(9, 'Coca-Cola 500ml', 8.00, 50, 'Drink'),
 	(10, 'Fanta 500ml', 8.00, 50, 'Drink'),
 	(11, 'Sprite 500ml', 8.00, 50, 'Drink');
+
+CREATE TABLE IF NOT EXISTS `detalle_pedido` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pedido_id` int DEFAULT NULL,
+  `producto_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `subtotal` double(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pedido_id` (`pedido_id`),
+  KEY `producto_id` (`producto_id`),
+  CONSTRAINT `detalle_pedido_ibfk_1` FOREIGN KEY (`pedido_id`) REFERENCES `pedido` (`id`),
+  CONSTRAINT `detalle_pedido_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+DELETE FROM `detalle_pedido`;
+INSERT INTO `detalle_pedido` (`id`, `pedido_id`, `producto_id`, `quantity`, `subtotal`) VALUES
+	(25, 1, 1, 1, 27.00),
+	(26, 2, 1, 1, 27.00),
+	(27, 3, 1, 1, 27.00),
+	(28, 4, 1, 1, 27.00),
+	(29, 5, 1, 1, 27.00),
+	(30, 6, 1, 1, 27.00);

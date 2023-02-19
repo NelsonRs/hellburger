@@ -29,25 +29,21 @@
         </header>
         <div class="group-card">
           <div class="grid-card">
-            <div class="card">
-              <div class="col-img">
-                <img src="/assets/img/products/bacon-king-doble.png">
-              </div>
-              <div class="col-title">
-                <p>XT Steakhouse</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="col-img">
-                <img src="/assets/img/products/bacon-king-doble.png">
-              </div>
-              <div class="col-title">
-                <p>XT Steakhouse</p>
-              </div>
-            </div>
+            <?=printProducts('Food')?>
           </div>
         </div>
-      </section>   
+      </section>  
+      
+      <section class="section-products">
+        <header>
+          <h2>Bebidas</h2>
+        </header>
+        <div class="group-card">
+          <div class="grid-card">
+            <?=printProducts('Drink')?>
+          </div>
+        </div>
+      </section> 
         
   </main>
   <script src="<?php $root?>assets/js/main.js"></script>

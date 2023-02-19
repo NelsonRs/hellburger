@@ -11,21 +11,13 @@
                 $name = $row["name"];
                 $price = $row["price"];
                 $print .= '
-                        <div class="card card'.$id.' disable-selection">
-                            <div class="card-body">
-                                <div class="img">
-
-                                    <img src="/assets/img/products/'.$name.'.png">
-                                    <span class="badge">
-                                        <span id="num'.$id.'">0</span>
-                                    </span>
-                                </div>
-                                <a id="'.$id.'" class="stretched-link" onclick="addProduct('.$id.')"></a>
-
-                                <div class="title">
-                                    <h3>'.$name.'</h3>
-                                    <p>'.$price.' Bs</p>
-                                </div>
+                        <div class="card">
+                            <div class="col-img">
+                                <img src="/assets/img/products/'.$name.'.png">
+                            </div>
+                            <div class="col-title">
+                                <p>'.$name.'</p>
+                                <p>'.$price.'</p>
                             </div>
                         </div>
                     ';

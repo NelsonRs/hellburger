@@ -3,7 +3,8 @@
     --black           :#1C1C1C;
     --white           :#FBFBFB;
     --primary         :#ee0e0e;
-    --secondary       :#E1C7C6;
+    --secondary       :#F1F1F1;
+    --on-secondary    :#DDDDDD;
     --tertiary        :#EEEEEE;
     --quaternary      :#505050;
   }
@@ -11,11 +12,13 @@
 html[data-theme='light'] {
     --bg                            :var(--white);
     --text-color                    :var(--black);
+    --bg-card                       :var(--on-secondary);
 }
 html[data-theme='dark'] {
 
     --bg                            :var(--black);
     --text-color                    :var(--white);
+    --bg-card                       :var(--black);
 }
 
 // @font-face {
@@ -36,7 +39,7 @@ html[data-theme='dark'] {
     font-size: 100%;
     text-decoration: none;
     font-weight: unset;
-    font-family: 'samsung-regular';
+    font-family: 'Gill Sans MT';
     -webkit-font-smoothing: antialiased;
     font-smooth: antialiased;
     vertical-align: baseline;
