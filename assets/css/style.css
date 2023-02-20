@@ -1,16 +1,52 @@
 @import url(/assets/css/reset/style.css);
 @media (max-width: 425px) {
-  header nav ul {
-    padding: 1.5rem 1.5rem;
+  main {
+    position: relative;
+  }
+  .navbar {
+    position: sticky;
+    padding: 1.5rem 2rem;
+    transition: top 0.25s;
+  }
+  .navbar::after {
+    filter: blur(15px);
+    background: black;
+    position: absolute;
+  }
+  .navbar nav ul {
     display: flex;
     justify-content: space-between;
+  }
+  .navbar nav ul li a .badge-cart {
+    position: absolute;
+    box-sizing: border-box;
+    top: 15%;
+    padding: 0.25rem;
+    border-radius: 25%;
+    font-size: 0.7rem;
+    background: var(--bg-card);
+  }
+  .sidenav {
+    position: fixed;
+    transition: right 0.25s;
+    background: var(--bg-card);
+    height: 100vh;
+    top: 0;
+  }
+  .sidenav ul {
+    padding: 1rem;
+  }
+  .sidenav ul .closebtn {
+    text-align: right;
+    padding: 0 0 1rem;
+    font-size: 1.5rem;
   }
   .section-products {
     padding: 1rem;
   }
   .section-products header h2 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 800;
   }
   .section-products .group-card {
     padding: 1rem 0;
@@ -24,14 +60,21 @@
   .section-products .group-card .grid-card .card {
     display: flex;
     flex-direction: column;
+    transition: all 0.25s;
+  }
+  .section-products .group-card .grid-card .card:active .col-img img {
+    max-width: 90%;
+    max-height: 95%;
   }
   .section-products .group-card .grid-card .card .col-img {
+    transition: all 0.25s;
     display: inherit;
     justify-content: center;
     align-items: center;
     height: 70%;
   }
   .section-products .group-card .grid-card .card .col-img img {
+    transition: inherit;
     max-width: 85%;
     max-height: 90%;
   }
@@ -40,7 +83,7 @@
   }
   .section-products .group-card .grid-card .card .col-title p:nth-of-type(1) {
     margin: 0 0 0.5rem;
-    font-weight: 600;
+    font-weight: 800;
   }
   .section-products .group-card .grid-card .card .col-title p:nth-of-type(2) {
     margin: 0.5rem 0 0;

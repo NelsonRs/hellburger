@@ -13,15 +13,22 @@
 <body> 
     <main>
 
-      <header>
+      <header class="navbar" id="navbar">
         <nav>
           <ul>
             <li><a href="#">Logo</a></li>
             <li><i id="theme-switch"></i></li>
-            <li><a href="#">Carrito</a></li>
+            <li><a href="#" onclick="openNav()">Carrito <span class="badge-cart">2</span> </a></li>
           </ul>
         </nav>
       </header>
+
+      <div class="sidenav" id="sidenav">
+        <ul>
+          <li class="closebtn"><a href="javascript:void(0)" onclick="closeNav()">&times;</a></li>
+          <li>No hay ningun item</li>
+        </ul>
+      </div>
 
       <section class="section-products">
         <header>

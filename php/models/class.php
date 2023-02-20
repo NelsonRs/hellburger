@@ -11,7 +11,7 @@
                 $name = $row["name"];
                 $price = $row["price"];
                 $print .= '
-                        <div class="card">
+                        <a href="?" class="card">
                             <div class="col-img">
                                 <img src="/assets/img/products/'.$name.'.png">
                             </div>
@@ -19,7 +19,7 @@
                                 <p>'.$name.'</p>
                                 <p>'.$price.'</p>
                             </div>
-                        </div>
+                        </a>
                     ';
             }
         } else {
