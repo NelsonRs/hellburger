@@ -29,8 +29,8 @@
             </div>
             <div id="mostrar-modal" class="btn-cart hamburger" onclick="modalCart()" >
                 <div class="bi-cart4">
-                    <span class="badge">
-                        <span id="Qtycart">0</span>
+                    <span id="Qtycart" class="badge">
+                        0
                     </span>
                 </div>
             </div>

@@ -222,8 +222,8 @@
             button{
                 z-index: 100;
                 cursor: pointer;  
-                width: 50%;
-                height: 100%;
+                width: 180px;
+                height: 50px;
                 padding: 10px;
                 border-radius: 5px;
                 border: 0;
@@ -334,11 +334,12 @@
             .btn-cart{
                 margin-right:15px;
                 font-size: 1.8rem;
-                cursor: pointer;           
+                cursor: pointer;
+
                 .badge{
-                    position: absolute;
-                    top: 10px;
-                    right:5%;
+                    position: relative;
+                    top: -10px;
+                    right:8px;
                     width: 1.5rem;
                     height: 1.5rem;
                     border-radius:0.5rem;
@@ -348,13 +349,27 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    span{
-                        font-family: 'SF Pro Display Bold';
-                        font-size: 15px;
-                        color: white;
-                    }
+                    font-family: 'SF Pro Display Bold';
+                    font-size: 15px;
+                    color: white;
                 }
             }
+            /*#Qtycart::before{
+                content: "2";
+                background-color: red;
+                font-size: 12px;
+                font-family: 'SF Pro Display Bold';
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 1.7rem;
+                min-height: 1.7rem;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                border-radius: 50%;*/
+            
         }
     section{
         grid-area: main;
@@ -376,10 +391,10 @@
             font-family: 'SF Pro Display';
         }
         .products{
-            padding: 3rem 0.5rem;
+            padding: 3rem 2rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 4rem 0.5rem;
+            grid-gap: 4rem 1.5rem;
             grid-auto-rows: minmax(80px, auto);
             .card{
                 cursor: pointer;  
@@ -431,7 +446,7 @@
                         padding-bottom: 20px;
                         h3{
                             padding-bottom: 5px;
-                            font-size: 1.15rem;
+                            font-size: 1.1rem;
                             padding-left: 0rem;
                         }
                         p{
@@ -477,7 +492,35 @@
         grid-template-areas: 
         "header"
         "main";
+        section{ 
+        .products{
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4rem 1.5rem;
+            grid-auto-rows: minmax(80px, auto);
+        }
     }
+}
+}
+
+@media (min-width:800px) {
+    .section-index{
+        grid-template-columns:1fr;
+        grid-template-rows: 5rem;
+        grid-template-areas: 
+        "header"
+        "main";
+        section{ 
+        .products{
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 4rem 1.5rem;
+            grid-auto-rows: minmax(80px, auto);
+        }
+    }
+}
 }
 
 

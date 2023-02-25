@@ -221,8 +221,8 @@
 .modal .modal-content .modal-body .Add-order button {
   z-index: 100;
   cursor: pointer;
-  width: 50%;
-  height: 100%;
+  width: 180px;
+  height: 50px;
   padding: 10px;
   border-radius: 5px;
   border: 0;
@@ -303,6 +303,21 @@
   justify-content: space-between;
   grid-area: header;
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  /*#Qtycart::before{
+      content: "2";
+      background-color: red;
+      font-size: 12px;
+      font-family: 'SF Pro Display Bold';
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.7rem;
+      min-height: 1.7rem;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      border-radius: 50%;*/
 }
 .section-index header div {
   display: flex;
@@ -326,9 +341,9 @@
   cursor: pointer;
 }
 .section-index header .btn-cart .badge {
-  position: absolute;
-  top: 10px;
-  right: 5%;
+  position: relative;
+  top: -10px;
+  right: 8px;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.5rem;
@@ -338,8 +353,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.section-index header .btn-cart .badge span {
   font-family: "SF Pro Display Bold";
   font-size: 15px;
   color: white;
@@ -365,10 +378,10 @@
   font-family: "SF Pro Display";
 }
 .section-index section .products {
-  padding: 3rem 0.5rem;
+  padding: 3rem 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 4rem 0.5rem;
+  grid-gap: 4rem 1.5rem;
   grid-auto-rows: minmax(80px, auto);
 }
 .section-index section .products .card {
@@ -424,7 +437,7 @@
 }
 .section-index section .products .card .card-body .title h3 {
   padding-bottom: 5px;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   padding-left: 0rem;
 }
 .section-index section .products .card .card-body .title p {
@@ -460,6 +473,27 @@
     grid-template-columns: 1fr;
     grid-template-rows: 5rem;
     grid-template-areas: "header" "main";
+  }
+  .section-index section .products {
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem 1.5rem;
+    grid-auto-rows: minmax(80px, auto);
+  }
+}
+@media (min-width: 800px) {
+  .section-index {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem;
+    grid-template-areas: "header" "main";
+  }
+  .section-index section .products {
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4rem 1.5rem;
+    grid-auto-rows: minmax(80px, auto);
   }
 }
 @font-face {
